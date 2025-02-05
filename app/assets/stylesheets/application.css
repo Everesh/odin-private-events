@@ -27,3 +27,7 @@ header {
     gap: 0.5em;
     padding: 1em;
 }
+
+.home_link {
+    margin-right: auto;
+}

@@ -24,8 +24,9 @@
 
   <body>
     <header>
-      <%= button_to "Log In", new_user_session_path %>
-      <%= button_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Home", root_path, class: 'home_link'%>
+      <%= link_to "Sign In", new_user_session_path %>
+      <%= link_to "Sign Up", new_user_registration_path %>
     </header>
     <%= yield %>
   </body>
