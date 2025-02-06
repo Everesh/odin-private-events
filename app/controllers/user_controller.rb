@@ -1,7 +1,5 @@
 class UserController < ApplicationController
   def show
-    @events = User.find(params[:id]).events
-
-    render "event/index"
+    @user = User.find(params[:id])
   end
 end

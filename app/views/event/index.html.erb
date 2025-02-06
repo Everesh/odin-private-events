@@ -1,11 +1,1 @@
-<ol>
-    <% @events.each do |event| %>
-        <li class="event">
-            <h1><%= event.title %></h1>
-            <h3>Date: <%= event.date %></h3>
-            <h3>Place: <%= event.place %></h3>
-            <h3>Author: TODO</h3>
-            <h5>Invited: TODO</h5>
-        </li>
-    <% end %>
-</ol>
+<%= render "events", events: @events %>
