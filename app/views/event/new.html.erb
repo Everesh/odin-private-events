@@ -1,0 +1,15 @@
+<%= form_with url: "/event", model: @event do |form| %>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+    </div>
+    <div>
+        <%= form.label :date %>
+        <%= form.date_field :date %>
+    </div>
+    <div>
+        <%= form.label :place %>
+        <%= form.text_field :place %>
+    </div>
+    <%= form.submit %>
+<% end %>
