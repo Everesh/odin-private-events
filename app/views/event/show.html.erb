@@ -9,10 +9,13 @@
     <% end %>
     <% if @event.attendants.empty? %> None <% end %>
 </h5>
-<% if user_signed_in? && @event.author.id != params[:id] %>
+<% if user_signed_in? && @event.author != current_user %>
     <% unless @event.attendants.include?(current_user) %>
         <%= button_to "Join", join_event_path(@event), method: :post %>
     <% else %>
         <%= button_to "Leave", leave_event_path(@event), method: :delete %>
     <% end %>
+<% end %>
+<% if @event.author == current_user %>
+    <%= button_to "REMOVE", delete_event_path(@event), method: :delete %>
 <% end %>

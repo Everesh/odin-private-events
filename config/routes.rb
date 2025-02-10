@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       post "join", to: "attendance#create"
       delete "leave", to: "attendance#delete"
+      delete "delete", to: "event#delete"
     end
   end
   resources :user, only: :show

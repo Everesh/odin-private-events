@@ -22,6 +22,15 @@ class EventController < ApplicationController
     @event = Event.find_by(id: params[:id])
   end
 
+  def delete
+    @event = Event.find_by(id: params[:id])
+    if current_user == @event.author && @event.delete
+      redirect_to event_index_path
+    else
+      puts @event.errors.full_messages
+      render :show, status: :unprocessable_entity
+    end
+  end
   private
 
   def event_params
