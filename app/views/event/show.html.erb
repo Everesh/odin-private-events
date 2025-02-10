@@ -9,3 +9,6 @@
     <% end %>
     <% if @event.attendants.empty? %> None <% end %>
 </h5>
+<% if user_signed_in? && @event.author.id != params[:id] %>
+    <%= button_to "Join", join_event_path(@event), method: :post %>
+<% end %>
