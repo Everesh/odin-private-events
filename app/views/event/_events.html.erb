@@ -5,7 +5,13 @@
             <h3>Date: <%= event.date %></h3>
             <h3>Place: <%= event.place %></h3>
             <h3>Author: <%= link_to event.author.email, user_path(event.author.id) %></h3>
-            <h5>Invited: TODO</h5>
+            <h5>Attendants:
+                <% event.attendants.each_with_index do |user, i| %>
+                    <% if i > 0 %>, <% end %>
+                    <%= user.email %>
+                <% end %>
+                <% if event.attendants.empty? %> None <% end %>
+            </h5>
         </li>
     <% end %>
 </ol>
